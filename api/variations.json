@@ -1,0 +1,14 @@
+{
+	"create": {
+		"method": "POST",
+		"path": "items/:item_id/variations"		
+	},
+	"update": {
+		"method": "PUT",
+		"path": "items/:item_id/variations/:variation_id"		
+	},
+	"del": {
+		"method": "DELETE",
+		"path": "items/:item_id/variations/:variation_id"		
+	}
+}

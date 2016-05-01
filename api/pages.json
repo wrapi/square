@@ -1,0 +1,18 @@
+{
+	"create": {
+		"method": "POST",
+		"path": "pages"		
+	},
+	"list": {
+		"method": "GET",
+		"path": "pages"		
+	},
+	"update": {
+		"method": "PUT",
+		"path": "pages/:page_id"		
+	},
+	"del": {
+		"method": "DELETE",
+		"path": "pages/:page_id"		
+	}
+}

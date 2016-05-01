@@ -1,0 +1,10 @@
+{
+	"list": {
+		"method": "GET",
+		"path": "payments"		
+	},
+	"retrieve": {
+		"method": "GET",
+		"path": "payments/:payment_id"		
+	}
+}

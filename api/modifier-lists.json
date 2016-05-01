@@ -1,0 +1,30 @@
+{
+	"create": {
+		"method": "POST",
+		"path": "modifier-lists"		
+	},
+	"list": {
+		"method": "GET",
+		"path": "modifier-lists"		
+	},
+	"retrieve": {
+		"method": "GET",
+		"path": "modifier-lists/:modifier_lists_id"		
+	},
+	"update": {
+		"method": "PUT",
+		"path": "modifier-lists/:modifier_lists_id"		
+	},
+	"del": {
+		"method": "DELETE",
+		"path": "modifier-lists/:modifier_lists_id"		
+	},
+	"apply": {
+		"method": "PUT",
+		"path": "items/:item_id/modifier-lists/:modifier_lists_id"		
+	},
+	"remove": {
+		"method": "DELETE",
+		"path": "items/:item_id/modifier-lists/:modifier_lists_id"		
+	}
+}

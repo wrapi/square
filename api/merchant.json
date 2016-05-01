@@ -1,0 +1,10 @@
+{
+	"me": {
+		"method": "GET",
+		"path": "me"		
+	},
+	"retrieve": {
+		"method": "GET",
+		"path": ":merchant_id"		
+	}
+}

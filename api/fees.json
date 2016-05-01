@@ -1,0 +1,26 @@
+{
+	"create": {
+		"method": "POST",
+		"path": "fees"		
+	},
+	"list": {
+		"method": "GET",
+		"path": "fees"		
+	},
+	"update": {
+		"method": "PUT",
+		"path": "fees/:fee_id"		
+	},
+	"del": {
+		"method": "DELETE",
+		"path": "fees/:fee_id"		
+	},
+	"apply": {
+		"method": "GET",
+		"path": "items/:item_id/fees/:fee_id"		
+	},
+	"remove": {
+		"method": "POST",
+		"path": "items/:item_id/fees/:fee_id"		
+	}
+}

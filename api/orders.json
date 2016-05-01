@@ -1,0 +1,14 @@
+{
+	"list": {
+		"method": "GET",
+		"path": "orders"		
+	},
+	"retrieve": {
+		"method": "GET",
+		"path": "orders/:order_id"		
+	},
+	"update": {
+		"method": "PUT",
+		"path": "orders/:order_id"		
+	}
+}

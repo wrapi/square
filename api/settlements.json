@@ -1,0 +1,10 @@
+{
+	"list": {
+		"method": "GET",
+		"path": "settlements"		
+	},
+	"retrieve": {
+		"method": "GET",
+		"path": "settlements/:payment_id"		
+	}
+}

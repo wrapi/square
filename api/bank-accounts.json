@@ -1,0 +1,10 @@
+{
+	"list": {
+		"method": "GET",
+		"path": "bank-accounts"		
+	},
+	"retrieve": {
+		"method": "GET",
+		"path": "bank-accounts/:bank_account_id"		
+	}
+}

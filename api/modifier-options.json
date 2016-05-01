@@ -1,0 +1,14 @@
+{
+	"create": {
+		"method": "POST",
+		"path": "modifier-lists/:modifier_lists_id/modifier-options"		
+	},
+	"update": {
+		"method": "PUT",
+		"path": "modifier-lists/:modifier_lists_id/modifier-options/:modifier_option_id"		
+	},
+	"del": {
+		"method": "DELETE",
+		"path": "modifier-lists/:modifier_lists_id/modifier-options/:modifier_option_id"		
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"create": {
+		"method": "POST",
+		"path": "discounts"		
+	},
+	"list": {
+		"method": "GET",
+		"path": "discounts"		
+	},
+	"update": {
+		"method": "PUT",
+		"path": "discounts/:discount_id"		
+	},
+	"del": {
+		"method": "DELETE",
+		"path": "discounts/:discount_id"		
+	}
+}

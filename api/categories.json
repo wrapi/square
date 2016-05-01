@@ -1,0 +1,18 @@
+{
+	"create": {
+		"method": "POST",
+		"path": "categories"		
+	},
+	"list": {
+		"method": "GET",
+		"path": "categories"		
+	},
+	"update": {
+		"method": "PUT",
+		"path": "categories/:category_id"		
+	},
+	"del": {
+		"method": "DELETE",
+		"path": "categories/:category_id"		
+	}
+}

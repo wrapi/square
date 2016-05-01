@@ -1,0 +1,10 @@
+{
+	"update": {
+		"method": "PUT",
+		"path": "pages/:page_id/cells"		
+	},
+	"del": {
+		"method": "DELETE",
+		"path": "pages/:page_id/cells"		
+	}
+}

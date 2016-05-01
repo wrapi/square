@@ -1,0 +1,10 @@
+{
+	"create": {
+		"method": "POST",
+		"path": "refunds"		
+	},
+	"list": {
+		"method": "GET",
+		"path": "refunds"		
+	}
+}

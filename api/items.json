@@ -1,0 +1,26 @@
+{
+	"create": {
+		"method": "POST",
+		"path": "items"		
+	},
+	"list": {
+		"method": "GET",
+		"path": "items"		
+	},
+	"retrieve": {
+		"method": "GET",
+		"path": "items/:item_id"		
+	},
+	"update": {
+		"method": "PUT",
+		"path": "items/:item_id"		
+	},
+	"del": {
+		"method": "DELETE",
+		"path": "items/:item_id"		
+	},
+	"uploadImage": {
+		"method": "POST",
+		"path": "items/:item_id/image"		
+	}
+}

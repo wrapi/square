@@ -1,0 +1,10 @@
+{
+	"list": {
+		"method": "GET",
+		"path": "inventory"		
+	},
+	"adjust": {
+		"method": "POST",
+		"path": "inventory/:variation_id"		
+	}
+}

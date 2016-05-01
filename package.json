@@ -1,0 +1,45 @@
+{
+  "name": "square-wrapi",
+  "version": "0.1.0",
+  "description": "Wrapper for Square Connect REST API",
+  "homepage": "https://github.com/wrapi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wrapi/square.git"
+  },
+  "keywords": [
+    "square",
+    "wrapi",
+    "REST",
+    "API",
+    "api wrapper",
+    "square-api",
+    "square-connect-api",
+    "square wrapper"
+  ],
+  "author": {
+    "name": "wrapi"
+  },
+  "contributors": [
+    {
+      "name": "N. Palani Kumanan"
+    }
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "bugs": {
+    "url": "https://github.com/wrapi/square/issues"
+  },
+  "dependencies": {
+    "wrapi": "^0.1.5"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  }
+}
