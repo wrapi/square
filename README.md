@@ -2,6 +2,8 @@
 
 Client interface for accessing [Square Connect API](https://docs.connect.squareup.com/).
 
+[![NPM version](https://img.shields.io/npm/v/square-wrapi.svg?style=flat)](https://www.npmjs.org/package/square-wrapi)
+
 ### Update
 > *This is a breaking change.*
 
