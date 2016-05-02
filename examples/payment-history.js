@@ -1,12 +1,12 @@
 var squareWrapi = require('../index.js');
 
-var access_token = 'REPLACE_ME';
-var merchant_id = 'me';
+var access_token = 'MY_ACCESS_TOKEN';
+var location_id = 'MY_LOCATION_ID';
 
-var client = new squareWrapi('v1', merchant_id, access_token);
+var client = new squareWrapi('v1', access_token, location_id);
 client.payments.list({
-    "begin_time": "2015-12-01T00:00:00Z",
-    "end_time": "2015-12-31T00:00:00Z"
+    "begin_time": "2016-04-01T00:00:00Z",
+    "end_time": "2016-05-01T00:00:00Z"
   },
   function(err, data) {
     if (!err) {

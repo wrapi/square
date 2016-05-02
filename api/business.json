@@ -1,0 +1,10 @@
+{
+	"me": {
+		"method": "GET",
+		"path": "me"		
+	},
+	"locations": {
+		"method": "GET",
+		"path": "me/locations"		
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"create": {
+		"method": "POST",
+		"path": "timecards"		
+	},
+	"list": {
+		"method": "GET",
+		"path": "timecards"		
+	},
+	"retrieve": {
+		"method": "GET",
+		"path": "timecards/:timecard_id"		
+	},
+	"update": {
+		"method": "PUT",
+		"path": "timecards/:timecard_id"		
+	},
+	"del": {
+		"method": "DELETE",
+		"path": "timecards/:timecard_id"		
+	},
+	"listEvents": {
+		"method": "GET",
+		"path": "timecards/:timecard_id/events"		
+	}
+}

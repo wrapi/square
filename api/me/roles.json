@@ -1,0 +1,18 @@
+{
+	"create": {
+		"method": "POST",
+		"path": "roles"		
+	},
+	"list": {
+		"method": "GET",
+		"path": "roles"		
+	},
+	"retrieve": {
+		"method": "GET",
+		"path": "roles/:role_id"		
+	},
+	"update": {
+		"method": "PUT",
+		"path": "roles/:role_id"		
+	}
+}

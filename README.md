@@ -2,20 +2,42 @@
 
 Client interface for accessing [Square Connect API](https://docs.connect.squareup.com/).
 
+### Update
+> *This is a breaking change.*
+
+> Applications created after February 16, 2016 will not be able to use the `merchant` methods.
+> Instead, use `business` methods. For older apps use version `0.1.0`.
+> More info.: https://docs.connect.squareup.com/articles/connect-api-changes-2016-02/
+
 ## Usage
 Create a client object to connect to Square Connect API endpoints.
 
 ```JS
 var squareWrapi = require('square-wrapi');
 
-var client = new squareWrapi('v1', MERCHANT_ID, API_ACCESS_TOKEN);
+var client = new squareWrapi('v1', API_ACCESS_TOKEN);
 
 ```
 
-A note about [`MERCHANT_ID`](https://docs.connect.squareup.com/api/connect/v1/#merchantid):
-> merchant_id indicates which merchant your application is acting on behalf of. You can get a merchant's ID with the `merchant.retrieve()` endpoint method. The value of the id field in the response is the merchant's ID.
+A note about [`LOCATION_ID`](https://docs.connect.squareup.com/api/connect/v1/#endpointpaths):
+> Most endpoint paths include a `location_id` parameter that indicates which of a business's locations your application is acting on behalf of. You can get a business's location IDs with the `business.locations()` endpoint method.
 
-> If you specify `me` as the value of the merchant_id parameter, the Connect API automatically determines the merchant_id based on the access token you provided.
+There are two ways to use the API (use #1 or #2 - not both):
+
+1. For a specific location.
+  >  If you have the location id, create the client object with the location id.
+
+  > `var client = new squareWrapi('v1', API_ACCESS_TOKEN, LOCATION_ID);`
+  
+  > square-wrapi will use this location id. on calls that require location id and you do not have to provide it on each call.
+
+2. For all locations.
+  > Create the client object without location id.
+
+  > `var client = new squareWrapi('v1', API_ACCESS_TOKEN);`
+  
+  > Provide `location_id` as the first parameter to all the calls that require location id.
+
 
 Once you have the client object, you are ready to make API calls to Square.
 
@@ -25,7 +47,7 @@ API calls follow this syntax:
 
 `client.apigroup.action(param1, ..., queryString, callback);`
 
-* `param` - (*if required*) url parameters - eg: For [payments.retrieve](#payments.retrieve) the value for `:payment_id`.
+* `param` - (*if required*) url parameters - eg: For [payments.retrieve](#payments.retrieve) the value for `:payment_id`. Provide `location_id` if you created the client without `LOCATION_ID`.
 * `queryString` - (*as required*) API endpoint parameters as key-value pairs.
 
 ### Examples
@@ -33,6 +55,18 @@ API calls follow this syntax:
 #### List Payments
 ```JS
 client.payments.list({
+    "begin_time": "2015-12-01T00:00:00Z",
+    "end_time": "2015-12-31T00:00:00Z"
+  },
+  function(err, data) {
+    if (!err) {
+      console.log(data);
+    } 
+  }
+);
+
+// Or with location_id
+client.payments.list('JGHJ0343', {
     "begin_time": "2015-12-01T00:00:00Z",
     "end_time": "2015-12-31T00:00:00Z"
   },
@@ -117,7 +151,13 @@ client.fees.del(FEE_ID, function(err, data) {
     console.log(data);
   } 
 });
-```
+
+// or with location_id
+client.fees.del(LOCATION_ID, FEE_ID, function(err, data) {
+  if (!err) {
+    console.log(data);
+  } 
+});```
 
 
 #### Removes a fee assocation from an item.
@@ -127,9 +167,48 @@ client.fees.remove(ITEM_ID, FEE_ID, function(err, data) {
     console.log(data);
   } 
 });
+
+// or with location_id
+client.fees.remove(LOCATION_ID, ITEM_ID, FEE_ID, function(err, data) {
+  if (!err) {
+    console.log(data);
+  } 
+});
+
 ```
 
 ## API Functions
+
+### Business Management
+
+#### Business & Locations
+* [business.me](https://docs.connect.squareup.com/api/connect/v1/#get-merchantid)
+* [business.locations](https://docs.connect.squareup.com/api/connect/v1/#get-locations)
+
+#### Employees
+* [employees.create](https://docs.connect.squareup.com/api/connect/v1/#post-employees)
+* [employees.list](https://docs.connect.squareup.com/api/connect/v1/#get-employees)
+* [employees.retrieve](https://docs.connect.squareup.com/api/connect/v1/#get-employeeid)
+* [employees.update](https://docs.connect.squareup.com/api/connect/v1/#put-employeeid)
+
+#### Roles
+* [roles.create](https://docs.connect.squareup.com/api/connect/v1/#post-roles)
+* [roles.list](https://docs.connect.squareup.com/api/connect/v1/#get-roles)
+* [roles.retrieve](https://docs.connect.squareup.com/api/connect/v1/#get-roleid)
+* [roles.update](https://docs.connect.squareup.com/api/connect/v1/#put-roleid)
+
+### Timecards
+* [timecards.create](https://docs.connect.squareup.com/api/connect/v1/#post-timecards)
+* [timecards.list](https://docs.connect.squareup.com/api/connect/v1/#get-timecards)
+* [timecards.retrieve](https://docs.connect.squareup.com/api/connect/v1/#get-timecardid)
+* [timecards.update](https://docs.connect.squareup.com/api/connect/v1/#put-timecardid)
+* [timecards.del](https://docs.connect.squareup.com/api/connect/v1/#delete-timecardid)
+* [timecards.uploadImage](https://docs.connect.squareup.com/api/connect/v1/#get-events)
+
+#### Cash Drawer Shifts
+* [cashDrawerShifts.list](https://docs.connect.squareup.com/api/connect/v1/#get-cashdrawershifts)
+* [cashDrawerShifts.retrieve](https://docs.connect.squareup.com/api/connect/v1/#get-cashdrawershiftid)
+
 
 ### Transaction Management
 
@@ -150,7 +229,7 @@ client.fees.remove(ITEM_ID, FEE_ID, function(err, data) {
 * [orders.retrieve](https://docs.connect.squareup.com/api/connect/v1/#get-orderid)
 * [orders.update](https://docs.connect.squareup.com/api/connect/v1/#put-orderid)
 
-#### Merchant
+#### Merchant (Deprecated)
 * [merchant.me](https://docs.connect.squareup.com/api/connect/v1/#get-merchantid)
 * [merchant.retrieve](https://docs.connect.squareup.com/api/connect/v1/#get-merchantid)
 

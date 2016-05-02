@@ -1,0 +1,18 @@
+{
+	"create": {
+		"method": "POST",
+		"path": "employees"		
+	},
+	"list": {
+		"method": "GET",
+		"path": "employees"		
+	},
+	"retrieve": {
+		"method": "GET",
+		"path": "employees/:employee_id"		
+	},
+	"update": {
+		"method": "PUT",
+		"path": "employees/:employee_id"		
+	}
+}

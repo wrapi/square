@@ -1,0 +1,10 @@
+{
+	"list": {
+		"method": "GET",
+		"path": "cash-drawer-shifts"		
+	},
+	"retrieve": {
+		"method": "GET",
+		"path": "cash-drawer-shifts/:shift_id"		
+	}
+}
