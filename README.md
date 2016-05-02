@@ -157,7 +157,8 @@ client.fees.del(LOCATION_ID, FEE_ID, function(err, data) {
   if (!err) {
     console.log(data);
   } 
-});```
+});
+```
 
 
 #### Removes a fee assocation from an item.
